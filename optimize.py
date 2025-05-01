@@ -27,10 +27,10 @@ df.fillna(method="ffill", inplace=True)
 df = df[::7]
 
 def objective(trial):
-    sigma = trial.suggest_float('sigma', 0.01, 0.1, step=0.001)
-    lambda_ = trial.suggest_float('lambda_', 0.3, 0.7, step=0.05)
-    alpha = trial.suggest_float('alpha', 0.3, 0.7, step=0.05)
-    delta = trial.suggest_float('delta', 0.3, 0.7, step=0.05)
+    sigma = trial.suggest_float('sigma', 0.005, 0.01, step=0.001)
+    lambda_ = trial.suggest_float('lambda_', 0.5, 0.8, step=0.05)
+    alpha = trial.suggest_float('alpha', 0.025, 0.25, step=0.05)
+    delta = 1
 
     rbf = RBF(sigma, lambda_, alpha, delta)
     for index, row in df.iterrows():
