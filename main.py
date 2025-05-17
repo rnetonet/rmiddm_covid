@@ -131,6 +131,7 @@ def render(sigma, lambda_, alpha, delta):
         edgecolor="none",
         transparent=False,
     )
+    print(f"Total Centers: {len(rbf.centers)=}")
 
 
 #
