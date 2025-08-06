@@ -156,7 +156,7 @@ class RBF(BaseDriftDetector):
             self.activated_center = input_data
 
         # First concept ?
-        if not self.concept_center:
+        if self.concept_center is None:
             self.concept_center = self.activated_center
 
         # Update markov
